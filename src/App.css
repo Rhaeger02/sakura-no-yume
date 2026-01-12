@@ -1,0 +1,84 @@
+/* App.css - Estilos principales de la aplicación */
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* Clases de utilidad */
+.section {
+  padding: 100px 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 2.5rem;
+  color: #000000;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.section-subtitle {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  color: #666666;
+  margin-bottom: 3rem;
+}
+
+.section-divider {
+  height: 3px;
+  width: 80px;
+  background-color: #c62828;
+  margin: 0 auto 2rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background-color: #c62828;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #000000;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 0;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.6rem;
+  }
+}

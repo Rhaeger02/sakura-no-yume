@@ -1,0 +1,154 @@
+/* Menu.css */
+.menu-section {
+    background-color: #f5f5f5;
+}
+
+.menu-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.menu-tab {
+    padding: 10px 25px;
+    background-color: transparent;
+    border: 2px solid #000000;
+    color: #000000;
+    border-radius: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.menu-tab:hover,
+.menu-tab.active {
+    background-color: #000000;
+    color: white;
+}
+
+.menu-scroll-container {
+    overflow-x: auto;
+    padding-bottom: 20px;
+}
+
+.menu-category {
+    display: flex;
+    gap: 30px;
+    min-width: min-content;
+    padding: 10px;
+}
+
+.card {
+    flex: 0 0 300px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.5rem;
+    color: #000000;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.card-description {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.95rem;
+    color: #666666;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.card-price {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #c62828;
+}
+
+/* Scrollbar styling */
+.menu-scroll-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.menu-scroll-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.menu-scroll-container::-webkit-scrollbar-thumb {
+    background: #c62828;
+    border-radius: 4px;
+}
+
+.menu-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #a01515;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .menu-tab {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+    
+    .card {
+        flex: 0 0 280px;
+    }
+    
+    .menu-category {
+        padding: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-tab {
+        width: 100%;
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .card {
+        flex: 0 0 260px;
+    }
+    
+    .card-content {
+        padding: 20px;
+    }
+    
+    .card-title {
+        font-size: 1.3rem;
+    }
+    
+    .card-description {
+        font-size: 0.9rem;
+    }
+}
