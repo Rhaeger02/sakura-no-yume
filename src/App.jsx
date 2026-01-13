@@ -7,12 +7,9 @@ import Chefs from './components/Chefs';
 import Reservation from './components/Reservation';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-
-// Importar estilos globales
 import './App.css';
 
 function App() {
-  // Efectos al montar el componente
   useEffect(() => {
     // 1. Scroll animations
     const handleScrollAnimations = () => {
@@ -58,7 +55,7 @@ function App() {
       }
     };
 
-    // 4. Active navigation based on scroll
+    // 4. Active navigation based on scroll - CORREGIDO (sin sectionHeight)
     const updateActiveNavLink = () => {
       const sections = document.querySelectorAll('section[id]');
       const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
@@ -66,7 +63,7 @@ function App() {
       
       sections.forEach(section => {
         const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
+        // NOTA: sectionHeight fue eliminado porque no se usaba
         
         if (window.scrollY >= sectionTop - 200) {
           current = section.getAttribute('id');
@@ -106,21 +103,11 @@ function App() {
       
       menuTabs.forEach(tab => {
         tab.addEventListener('click', function() {
-          // Remove active class from all tabs
           menuTabs.forEach(t => t.classList.remove('active'));
-          
-          // Add active class to clicked tab
           this.classList.add('active');
           
-          // Get category to show
           const category = this.getAttribute('data-category');
-          
-          // Hide all categories
-          menuCategories.forEach(cat => {
-            cat.classList.remove('active');
-          });
-          
-          // Show selected category
+          menuCategories.forEach(cat => cat.classList.remove('active'));
           document.getElementById(category)?.classList.add('active');
         });
       });
@@ -146,7 +133,6 @@ function App() {
         const time = document.getElementById('time')?.value;
         const guests = document.getElementById('guests')?.value;
         
-        // Validation
         if (!name || !email || !phone || !date || !time || !guests) {
           alert('Please fill in all required fields.');
           return;
@@ -157,7 +143,6 @@ function App() {
           return;
         }
         
-        // Simulate form submission
         alert('Thank you! Your reservation has been received. We will confirm shortly via email.');
         reservationForm.reset();
       };
@@ -180,7 +165,6 @@ function App() {
         
         hamburgerMenu.addEventListener('click', toggleMenu);
         
-        // Close menu when clicking links
         mobileNavLinks.forEach(link => {
           link.addEventListener('click', () => {
             mobileNav?.classList.remove('active');
@@ -188,9 +172,7 @@ function App() {
           });
         });
         
-        return () => {
-          hamburgerMenu.removeEventListener('click', toggleMenu);
-        };
+        return () => hamburgerMenu.removeEventListener('click', toggleMenu);
       }
     };
 
@@ -208,25 +190,24 @@ function App() {
       });
     };
 
-    // Inicializar todo
-    handleScrollAnimations(); // Run once on load
+    // Initialize everything
+    handleScrollAnimations();
     setupMenuTabs();
     setupFormValidation();
     setupHamburgerMenu();
     setupCardEffects();
 
-    // Configurar event listeners
+    // Event listeners
     window.addEventListener('scroll', handleScrollAnimations);
     window.addEventListener('scroll', handleHeaderScroll);
     window.addEventListener('scroll', handleParallax);
     window.addEventListener('scroll', updateActiveNavLink);
 
-    // Smooth scrolling para todos los anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', handleSmoothScroll);
     });
 
-    // Limpieza al desmontar
+    // Cleanup
     return () => {
       window.removeEventListener('scroll', handleScrollAnimations);
       window.removeEventListener('scroll', handleHeaderScroll);
