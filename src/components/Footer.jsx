@@ -81,7 +81,10 @@ const Footer = () => {
                 </div>
                 
                 <div className="footer-bottom">
-                    <p>&copy; {new Date().getFullYear()} Sakura No Yume. All rights reserved.</p>
+                    <p>{new Date().getFullYear()} Sakura No Yume. Images taken from the internet and Gemini. 
+                        Created by 
+                        <a href="https://cma-portfolio.netlify.app/" target="_blank"> CARLOS M.</a>
+                    </p>
                     <div className="legal-links">
                         {legalLinks.map(link => (
                             <a key={link.label} href={link.href}>

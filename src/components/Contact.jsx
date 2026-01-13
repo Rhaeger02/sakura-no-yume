@@ -52,7 +52,7 @@ const Contact = () => {
                         <div className="map-wrapper">
                             <iframe
                                 title="Plaza Norte Location"
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.2873143130834!2d-77.05893622464867!3d-12.097547941445904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c9908006f423%3A0x41e123d9c49cda20!2sPlaza%20Norte!5e0!3m2!1ses!2spe!4v1689290281058!5m2!1ses!2spe"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.747849035178!2d-77.0620319!3d-12.0071505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105ce300d8854e1%3A0x6a1b58f36fcc79a6!2sPlaza%20Norte!5e0!3m2!1ses!2spe!4v1689290281058!5m2!1ses!2spe"
                                 width="100%"
                                 height="400"
                                 style={{ border: 0 }}
